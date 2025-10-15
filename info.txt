@@ -1,0 +1,14 @@
+Wewnątrz zainstalowanych plików można w ten sposób sterować diodą LED blokady szumów. Za pomocą exec, jak pokazano w podświetlonym wierszu Svxlink Logic.tcl
+
+#
+# Executed each time the squelch is opened or closed
+#   rx_id   - The ID of the RX that the squelch opened/closed on
+#   is_open - Set to 1 if the squelch is open or 0 if it's closed
+#
+proc squelch_open {rx_id is_open} {
+  exec cm108 -H /dev/hidraw0 -P 4 -L $is_open;
+  variable sql_rx_id;
+  #puts "The squelch is $is_open on RX $rx_id";
+  set sql_rx_id $rx_id;
+}
+I to działa. Dioda LED podłączona do GPIO4 świeci się po naciśnięciu PTT i gaśnie po zwolnieniu PTT.
