@@ -1,3 +1,6 @@
+
+https://www.alauda.ro/2025/08/how-to-use-cm108-gpio-from-svxlink/
+
 Wewnątrz zainstalowanych plików można w ten sposób sterować diodą LED blokady szumów. Za pomocą exec, jak pokazano w podświetlonym wierszu Svxlink Logic.tcl
 
 #
